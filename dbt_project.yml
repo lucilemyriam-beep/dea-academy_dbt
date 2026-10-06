@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'walmart_data_engineering'
 version: '1.0.0'
 config-version: 2
 
@@ -11,11 +11,11 @@ profile: 'default'
 
 vars:
 
-   target_db: GLUEDB
+   target_db: WALMART_DB
 
-   target_schema: PUBLIC
+   target_schema: GOLD
 
-   stage_name: GLUEDB.PUBLIC.GLUE_S3_STAGE
+   stage_name: WALMART_DB.RAW.WALMART_S3_STAGE
 
 
 
@@ -46,7 +46,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
+  walmart_data_engineering:
       +materialized: table
